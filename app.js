@@ -25,23 +25,20 @@ hbs.registerPartials( __dirname + '/views/partials' );
 // Servir contenido estático
 app.use( express.static('public') );
 
+// app.get('/', (req, res) => {
+//     res.render('home', info);
+// });
 
+// app.get('/generic', (req, res) => {
+//     res.render('generic', info);
+// });
 
-app.get('/', (req, res) => {
-    res.render('home', info);
-});
-
-app.get('/generic', (req, res) => {
-    res.render('generic', info);
-});
-
-app.get('/elements', (req, res) => {
-    res.render('elements', info);
-});
-
+// app.get('/elements', (req, res) => {
+//     res.render('elements', info);
+// });
 
 app.get('*', (req, res) => {
-    res.sendFile( __dirname + '/public/404.html' )
+    res.sendFile( __dirname + '/public/index.html' )
 });
 
 app.listen(port, () => {
